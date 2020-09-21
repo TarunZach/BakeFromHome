@@ -1,0 +1,444 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v16/FwZY7-Qmy14u9lezJ-6H6Mw.ttf) format('truetype');
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.outer-menu {
+  position: fixed;
+  left: 0;
+  z-index: 1;
+}
+
+.outer-menu .checkbox-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+}
+
+.outer-menu .checkbox-toggle:checked+.hamburger>div {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.outer-menu .checkbox-toggle:checked+.hamburger>div:before, .outer-menu .checkbox-toggle:checked+.hamburger>div:after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.outer-menu .checkbox-toggle:checked+.hamburger>div:after {
+  opacity: 0;
+}
+
+.outer-menu .checkbox-toggle:checked~.menu {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.outer-menu .checkbox-toggle:checked~.menu>div {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-duration: 0.75s;
+  transition-duration: 0.75s;
+}
+
+.outer-menu .checkbox-toggle:checked~.menu>div>div {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease 0.4s;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+.outer-menu .checkbox-toggle:hover+.hamburger {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.outer-menu .checkbox-toggle:checked:hover+.hamburger>div {
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.outer-menu .hamburger {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 0.5em 1em;
+  border-radius: 0 0.12em 0.12em 0;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.4s ease;
+  transition: box-shadow 0.4s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.outer-menu .hamburger>div {
+  position: relative;
+  -webkit-box-flex: 0;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: black;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.outer-menu .hamburger>div:before, .outer-menu .hamburger>div:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.outer-menu .hamburger>div:after {
+  top: 10px;
+}
+
+.outer-menu .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.outer-menu .menu>div {
+  width: 200vw;
+  height: 200vw;
+  color: white;
+  background: gray;
+  opacity: 0.9;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-box-flex: 0;
+  flex: none;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.outer-menu .menu>div>div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+  overflow-y: auto;
+  -webkit-box-flex: 0;
+  flex: none;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.outer-menu .menu>div>div>ul {
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  display: block;
+  max-height: 100vh;
+}
+
+.outer-menu .menu>div>div>ul>li {
+  padding: 0;
+  margin: 1em;
+  font-size: 24px;
+  display: block;
+}
+
+.outer-menu .menu>div>div>ul>li>a {
+  position: relative;
+  display: inline;
+  cursor: pointer;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+
+.outer-menu .menu>div>div>ul>li>a:hover {
+  color: whitesmoke;
+}
+
+.outer-menu .menu>div>div>ul>li>a:hover:after {
+  width: 100%;
+}
+
+.outer-menu .menu>div>div>ul>li>a:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: -0.15em;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e5e5e5;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+}
+
+/*  Basic Title  */
+
+h1 {
+  color: black;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-family: serif;
+  font-weight: 300;
+  font-size: 4.5em;
+  text-align: center;
+  line-height: 2;
+  -webkit-animation: 3s fade;
+  animation: 3s fade;
+  z-index: 0;
+}
+
+h1 span {
+  display: inline-block;
+  position: relative;
+  padding: .6em 1em;
+}
+
+h1 span:before {
+  display: block;
+  content: '';
+  width: 110%;
+  margin-left: -5%;
+  margin-bottom: 0.8%;
+  border-top: 4px solid black;
+  -webkit-animation: 2.5s draw;
+  animation: 2.5s draw;
+}
+
+h1 span:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 4px solid black;
+  -webkit-animation: 2.5s draw-bottom;
+  animation: 2.5s draw-bottom;
+}
+
+/* Simple Title Animation */
+
+@keyframes draw {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 110%;
+  }
+}
+
+@keyframes draw-bottom {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.freshtext {
+  color: white;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica";
+  font-size: 50px;
+  position: absolute;
+  border: 7px solid #f1f1f1;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 400px;
+  padding: 7px;
+  text-align: center;
+}
+
+.gallery {
+  width: 100%;
+  opacity: 1;
+}
+
+.row {
+  width: 100%;
+  display: block;
+}
+
+.item img {
+  height: 270px;
+  width: 350px;
+}
+
+.item {
+  position: relative;
+  padding: 50px;
+  padding-top: 150px;
+  display: inline-block;
+  left: 20%;
+  vertical-align: top;
+  text-align: center;
+  font-size: 20px;
+}
+
+.caption {
+  display: block;
+}
+
+.bgshop {
+  overflow: auto;
+  height: 100%;
+  background-image: url(img/wood.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.stock {
+  top: 120%;
+  position: absolute;
+  /*top: 10%;
+    height : 110%;
+    background-image : url(img/bg3.jpg);
+    background-size : cover;
+    background-position : center;
+    position : relative ;
+    width : 100%;
+    background-repeat: no-repeat;
+    transition : transform .2s;
+    opacity : 0.5;*/
+}
+
+.stockimg img {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 127%;
+  height: 100%;
+  left: 7%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .8);
+  background-repeat: no-repeat;
+  transition: transform .2s;
+  opacity: 0.9;
+  display: flex;
+  /*-webkit-filter: blur(2px);
+    filter: blur(2px); */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+
+.item img {
+  background : white;
+  position: relative;
+  float: left;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0 ,.8);
+}
+
