@@ -243,7 +243,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .outer-menu .menu>div>div>ul>li>a:hover {
-  color: whitesmoke;
+  color:whitesmoke;
 }
 
 .outer-menu .menu>div>div>ul>li>a:hover:after {
@@ -258,7 +258,7 @@ a, a:visited, a:hover, a:active {
   left: 0;
   width: 0;
   height: 2px;
-  background: #e5e5e5;
+  background: white;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
 }
@@ -411,6 +411,11 @@ h1 span:after {
     opacity : 0.5;*/
 }
 
+.stockimg
+{
+  padding-bottom : 100px;
+}
+
 .stockimg img {
   background-size: cover;
   background-position: center;
@@ -425,6 +430,50 @@ h1 span:after {
   display: flex;
   /*-webkit-filter: blur(2px);
     filter: blur(2px); */
+}
+
+.cart
+{
+  position : absolute;
+  height : 10%;
+  width : 10%;
+  top : 250%;
+  left : 46%;
+  font-size : 50px;
+}
+
+.cart a:hover
+{
+  color : black;
+}
+
+.cart a:hover:after
+{
+  width : 90%;
+  animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    left : 1%;
+    bottom : 9%;
+
+}
+
+.cart a:after
+{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: -0.15em;
+  height: 2px;
+  background: black;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+}
+
+.cartimg
+{
+  height : 60%;
+  top : 20%;
 }
 
 html, body {
