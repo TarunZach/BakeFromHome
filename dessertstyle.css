@@ -437,8 +437,8 @@ h1 span:after {
   position : absolute;
   height : 10%;
   width : 10%;
-  top : 250%;
-  left : 46%;
+  top : 110%;
+  left : 85%;
   font-size : 50px;
 }
 
@@ -454,8 +454,7 @@ h1 span:after {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     left : 1%;
-    bottom : 9%;
-
+    bottom : 21%;
 }
 
 .cart a:after

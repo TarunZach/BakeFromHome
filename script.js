@@ -21,7 +21,7 @@ function toggleSidebar() {
 
 /*function toggleSidebar()
 {
-	document.getElementById("sidebar").classList.toggle('active');
+    document.getElementById("sidebar").classList.toggle('active');
 }*/
 
 $('.js-input').keyup(function () {
@@ -31,7 +31,4 @@ $('.js-input').keyup(function () {
         $(this).removeClass('not-empty');
     }
 });
-
-
-
 
