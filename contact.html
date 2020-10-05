@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <body>
+
     <head>
         <link rel="stylesheet" href="contactstyle.css" type="text/css">
         <script type="text/javascript" src="script.js"></script>
@@ -61,20 +63,21 @@
     var btn = document.getElementById("mybtn");
     var span = document.getElementsByClassName("close")[0];
 
-    btn.onclick = function() {
+    btn.onclick = function () {
         modal.style.display = "block";
     }
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
         location.reload();
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
             location.reload();
         }
     }
 </script>
+
 
 </html>

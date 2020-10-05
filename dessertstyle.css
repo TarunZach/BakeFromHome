@@ -363,11 +363,17 @@ h1 span:after {
 .row {
   width: 100%;
   display: block;
+  
 }
 
 .item img {
   height: 270px;
   width: 350px;
+  background : white;
+  position: relative;
+  float: left;
+  padding : 5px;
+  box-shadow: 0 10px 30px rgba(0,0,0 ,.8);
 }
 
 .item {
@@ -426,7 +432,7 @@ h1 span:after {
   box-shadow: 0 25px 60px rgba(0, 0, 0, .8);
   background-repeat: no-repeat;
   transition: transform .2s;
-  opacity: 0.9;
+  opacity: 0.85;
   display: flex;
   /*-webkit-filter: blur(2px);
     filter: blur(2px); */
@@ -481,12 +487,4 @@ html, body {
   overflow: auto;
 }
 
-
-.item img {
-  background : white;
-  position: relative;
-  float: left;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0 ,.8);
-}
 
