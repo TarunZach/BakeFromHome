@@ -67,9 +67,9 @@
                         <h2>LOGIN</h2>
                         <br><br><br><br><br>
                         <form action="http://localhost/Project/signin.php" method="POST">
-                            <input style="width: 200px; height: 35px; font-size: 15px" name="email" type="text" placeholder="Email" required><br><br>
-                            <input style="width: 200px; height: 35px; font-size: 15px" name="pass" type="password" placeholder="Password" required><br><br>
-                            <button class="btn_login">LOGIN</button>
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="emaillogin" type="text" placeholder="Email" required><br><br>
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="passlogin" type="password" placeholder="pass" required><br><br>
+                            <button name="login" class="btn_login" type="submit" action="final.html">LOGIN</button>
                         </form>
                     </div>
 
@@ -81,9 +81,9 @@
                         <form action="http://localhost/Project/signup.php" method="POST">
                             <input style="width: 200px; height: 35px; font-size: 15px" name="email" type="text" placeholder="Email" required><br><br>
                             <input style="width: 200px; height: 35px; font-size: 15px" type="text" placeholder="User" required><br><br>
-                            <input style="width: 200px; height: 35px; font-size: 15px" name="pass" type="password" placeholder="Password" required><br><br>
-                            <input style="width: 200px; height: 35px; font-size: 15px" type="password" placeholder="Confirm Password" required><br><br>
-                            <button class="btn_sign_up" >SIGN UP</button>
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="pass" type="password" placeholder="pass" required><br><br>
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="confirm_pass" type="password" placeholder="Confirm pass" required><br><br>
+                            <button name="signup" class="btn_sign_up" type="submit" action="final.html">SIGN UP</button>
                         </form>
 
                     </div>

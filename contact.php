@@ -1,3 +1,12 @@
+<?php
+include "signin.php";
+session_start();
+if($loginstatus==false){
+    echo 'ifisrunning';
+   header("Location:login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +29,7 @@
                         <li><a href="final.html">About</a></li>
                         <li><a href="desserts.html">Products</a></li>
                         <li><a href="http://localhost/Project/login.php">Login/Sign Up</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="http://localhost/Project/contact.php">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
