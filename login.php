@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="final.html">About</a></li>
                         <li><a href="desserts.html">Products</a></li>
-                        <li><a href="login.html">Login/Sign Up</a></li>
+                        <li><a href="http://localhost/Project/login.php">Login/Sign Up</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
 
                     </ul>
@@ -40,7 +40,7 @@
                             <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
                         </div>
                     </div>
-                    
+
                     <div class="col_md_sign_up">
                         <div class="cont_ba_opcitiy">
                             <h2>SIGN UP</h2>
@@ -53,24 +53,24 @@
 
                 <div class="cont_back_info">
                     <div class="cont_img_back_grey">
-                        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                            alt="" />
+                        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" />
                     </div>
 
                 </div>
                 <div class="cont_forms">
                     <div class="cont_img_back_">
-                        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                            alt="" />
+                        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" />
                     </div>
                     <div class="cont_form_login">
                         <br>
                         <a href="#" onclick="ocultar_login_sign_up()"><i class="arrow left"></i></a>
                         <h2>LOGIN</h2>
                         <br><br><br><br><br>
-                        <input type="text" placeholder="Email" required><br>
-                        <input type="password" placeholder="Password" required><br><br>
-                        <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                        <form action="http://localhost/Project/signin.php" method="POST">
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="email" type="text" placeholder="Email" required><br><br>
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="pass" type="password" placeholder="Password" required><br><br>
+                            <button class="btn_login">LOGIN</button>
+                        </form>
                     </div>
 
                     <div class="cont_form_sign_up">
@@ -78,11 +78,13 @@
                         <a href="#" onclick="ocultar_login_sign_up()"><i class="arrow left"></i></a>
                         <h2>SIGN UP</h2>
                         <br><br><br><br><br>
-                        <input type="text" placeholder="Email" required>
-                        <input type="text" placeholder="User" required>
-                        <input type="password" placeholder="Password" required>
-                        <input type="password" placeholder="Confirm Password" required><br><br>
-                        <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                        <form action="http://localhost/Project/signup.php" method="POST">
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="email" type="text" placeholder="Email" required><br><br>
+                            <input style="width: 200px; height: 35px; font-size: 15px" type="text" placeholder="User" required><br><br>
+                            <input style="width: 200px; height: 35px; font-size: 15px" name="pass" type="password" placeholder="Password" required><br><br>
+                            <input style="width: 200px; height: 35px; font-size: 15px" type="password" placeholder="Confirm Password" required><br><br>
+                            <button class="btn_sign_up" >SIGN UP</button>
+                        </form>
 
                     </div>
 

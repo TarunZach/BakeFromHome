@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="final.html">About</a></li>
                         <li><a href="desserts.html">Products</a></li>
-                        <li><a href="login.html">Login/Sign Up</a></li>
+                        <li><a href="http://localhost/Project/login.php">Login/Sign Up</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -49,35 +49,7 @@
             </form>
         </section>
     </div>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h1>Thank you</h1>
-            <p>We will reply to you within 24 hours.</p>
-        </div>
     </div>
 </body>
-
-<script>
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("mybtn");
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-    span.onclick = function () {
-        modal.style.display = "none";
-        location.reload();
-    }
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            location.reload();
-        }
-    }
-</script>
-
 
 </html>
