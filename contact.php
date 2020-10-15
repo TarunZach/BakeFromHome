@@ -1,13 +1,10 @@
-<?php
-include "signin.php";
-session_start();
-if($loginstatus==false){
-    echo 'ifisrunning';
-   header("Location:login.php");
-}
-?>
-
 <!DOCTYPE html>
+<?php
+  include("signin.php");
+  if(empty($_SESSION["login"])){ 
+    header("LOCATION:http://localhost/Project/login.php"); 
+  }
+?>
 <html>
 
 <body>

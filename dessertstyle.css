@@ -424,9 +424,9 @@ h1 span:after {
   background-size: cover;
   background-position: center;
   position: absolute;
-  width: 130%;
+  width: 120%;
   height: 100%;
-  left: 14%;
+  left: 10%;
   box-shadow: 0 25px 60px rgba(0, 0, 0, .8);
   background-repeat: no-repeat;
   transition: transform .2s;
@@ -455,9 +455,12 @@ html, body {
 }
 
 
+
+
 .fx2 .item {
   margin: 10px 0;
   padding: 25px;
+  left:21%;
 }
 
 
@@ -466,7 +469,7 @@ html, body {
   display: block;
   height: auto;
   height: 270px;
-  width: 350px;
+  width: 400px;
 
 }
 
@@ -510,6 +513,7 @@ html, body {
 .fx2 a .item p {
   font-family: 'Raleway', sans-serif;
   font-size: 8px;
+  font-weight : 400;
   position: absolute;
   color: #fff;
   text-transform: uppercase;
@@ -525,4 +529,10 @@ html, body {
 
 .fx2 a:hover .item p, .fx2 a:focus .item p {
   opacity: 1;
+}
+
+.item img:hover
+{
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
 }
