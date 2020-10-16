@@ -85,11 +85,8 @@
                             <input style="width: 200px; height: 35px; font-size: 15px" name="confirm_pass" type="password" placeholder="Confirm pass" required><br><br>
                             <button name="signup" class="btn_sign_up" type="submit" action="final.html">SIGN UP</button>
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>

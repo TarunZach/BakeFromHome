@@ -3,6 +3,7 @@
 session_start();
 
 include("config.php");
+$loginstatus=false;
 $email = $_POST['emaillogin'];
 $pass = $_POST['passlogin'];
 $hashpass = md5($pass);
@@ -17,15 +18,15 @@ if($stmt = $mysqli->prepare("SELECT * FROM userinfo WHERE email = '$email' AND p
   $stmt->close(); 
 
   if($result == 1){ 
-    $_SESSION["login"] = $email; 
+    $_SESSION["login"] = 1; 
+    $_SESSION["email"] = $email; 
     echo "Login Succesful";
-    header("LOCATION:http://localhost/Project/contact.php"); 
+    
+    header("LOCATION:final.html"); 
   }
   else { 
     echo "Incorrect Email or Password";
-    header("Refresh:2; LOCATION:http://localhost/Project/login.php"); 
+    header("LOCATION:http://localhost/Project/login.php"); 
   }
-
 } 
-
 ?>
