@@ -80,11 +80,12 @@ app.post("/signup", function (req, res) {
     bcrypt.genSalt(10, function (err, salt) {
         bcrypt.hash(pass, salt, function (err, hash) {
             var sql = "INSERT INTO userinfo (pass, email) VALUES ('" + hash + "','" + em + "')";
-            connection.query(sql, (err, res) => {
+            connection.query(sql, (err, ress) => {
                 if (err) {
                     console.log("error: ", err);
                 } else {
                     console.log("Input successful!");
+                    res.redirect("/login");
 
                 }
             });
