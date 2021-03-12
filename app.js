@@ -55,20 +55,15 @@ app.post("/login", function (req, res) {
     var pass = req.body.passlogin;
     var sql = "SELECT * FROM userinfo WHERE email='" + em + "'";
     connection.query(sql, (err, result) => {
-        console.log(md5("Message").toString());
-        console.log("connq", result[0].pass);
         var userPass = md5(result[0].pass);
 
         if (result.length === 0) {
             console.log(err);
             res.render("login", { error1: "Invalid email" });
         } else {
-            console.log("decryptedpass", pass);
-            console.log("userpassword", userPass);
             bcrypt.compare(pass, userPass, function (err, ress) {
                 console.log(ress);
                 if (!ress) {
-                    console.log("afterlogin", pass);
                     res.render("login", { error1: "Invalid password" });
                 } else if (err) {
                     console.log("Error: ", err);
